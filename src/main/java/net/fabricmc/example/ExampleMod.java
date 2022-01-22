@@ -30,12 +30,14 @@ public class ExampleMod implements ModInitializer {
 	// That way, it's clear which mod wrote info, warnings, and errors.
 
 	public static final Block ASTOLFO_ORE = new Block(FabricBlockSettings.of(Material.STONE).strength(1.0f, 1.0f).sounds(BlockSoundGroup.STONE));
-	public static final ArmorMaterial ASTOLFO = new ModArmorMaterials();
+	public static final ArmorMaterial ASTOLFO_MATERIAL = new ModArmorMaterials();
 
-	public static final Item ASTOLFO_HELMET = new ArmorItem(ExampleMod.ASTOLFO, EquipmentSlot.HEAD, new Item.Settings().group(ItemGroup.COMBAT));
-	public static final Item ASTOLFO_CHESTPLATE = new ArmorItem(ExampleMod.ASTOLFO, EquipmentSlot.CHEST, new Item.Settings().group(ItemGroup.COMBAT));
-	public static final Item ASTOLFO_LEGGINGS = new ArmorItem(ExampleMod.ASTOLFO, EquipmentSlot.LEGS, new Item.Settings().group(ItemGroup.COMBAT));
-	public static final Item ASTOLFO_BOOTS = new ArmorItem(ExampleMod.ASTOLFO, EquipmentSlot.FEET, new Item.Settings().group(ItemGroup.COMBAT));
+	public static final Item ASTOLFO = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
+
+	public static final Item ASTOLFO_HELMET = new ArmorItem(ExampleMod.ASTOLFO_MATERIAL, EquipmentSlot.HEAD, new Item.Settings().group(ItemGroup.COMBAT));
+	public static final Item ASTOLFO_CHESTPLATE = new ArmorItem(ExampleMod.ASTOLFO_MATERIAL, EquipmentSlot.CHEST, new Item.Settings().group(ItemGroup.COMBAT));
+	public static final Item ASTOLFO_LEGGINGS = new ArmorItem(ExampleMod.ASTOLFO_MATERIAL, EquipmentSlot.LEGS, new Item.Settings().group(ItemGroup.COMBAT));
+	public static final Item ASTOLFO_BOOTS = new ArmorItem(ExampleMod.ASTOLFO_MATERIAL, EquipmentSlot.FEET, new Item.Settings().group(ItemGroup.COMBAT));
 
 
 	private static ConfiguredFeature<?, ?> OVERWORLD_ASTOLFO_ORE_CONFIGURED_FEATURE = Feature.ORE
@@ -66,6 +68,9 @@ public class ExampleMod implements ModInitializer {
 		Registry.register(Registry.ITEM, new Identifier("modid", "astolfo_chestplate"), ASTOLFO_CHESTPLATE);
 		Registry.register(Registry.ITEM, new Identifier("modid", "astolfo_leggings"), ASTOLFO_LEGGINGS);
 		Registry.register(Registry.ITEM, new Identifier("modid", "astolfo_boots"), ASTOLFO_BOOTS);
+
+		Registry.register(Registry.ITEM, new Identifier("modid", "astolfo"), ASTOLFO);
+
 
 		Registry.register(BuiltinRegistries.CONFIGURED_FEATURE,
 				new Identifier("modid", "overworld_astolfo_ore"), OVERWORLD_ASTOLFO_ORE_CONFIGURED_FEATURE);

@@ -1,4 +1,8 @@
 {
   "item.modid.astolfo": "Astolfo",
-  "block.modid.astolfo_ore": "Astolfo ore"
+  "block.modid.astolfo_ore": "Astolfo ore",
+  "item.modid.astolfo_helmet": "Astolfo helmet",
+  "item.modid.astolfo_chestplate": "Astolfo chestplate",
+  "item.modid.astolfo_leggings": "Astolfo leggings",
+  "item.modid.astolfo_boots": "Astolfo boots"
 }
