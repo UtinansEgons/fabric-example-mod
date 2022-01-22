@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "#-#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "modid:astolfo"
+    },
+    "-": {
+      "item": "minecraft:apple"
+    }
+  },
+
+  "result": {
+    "item": "modid:astolfo_face"
+  }
+}

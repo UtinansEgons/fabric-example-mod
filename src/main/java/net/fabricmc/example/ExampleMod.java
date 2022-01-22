@@ -33,7 +33,8 @@ public class ExampleMod implements ModInitializer {
 	public static final ArmorMaterial ASTOLFO_MATERIAL = new ModArmorMaterials();
 
 	public static final Item ASTOLFO = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
-
+	public static final Item ASTOLFO_FACE = new Item(new Item.Settings().group(ItemGroup.FOOD).food(ItemFood.ASTOLFO_FACE));
+	public static final Item GOLDEN_ASTOLFO_FACE = new Item(new Item.Settings().group(ItemGroup.FOOD).food(ItemFood.GOLDEN_ASTOLFO_FACE));
 	public static final Item ASTOLFO_HELMET = new ArmorItem(ExampleMod.ASTOLFO_MATERIAL, EquipmentSlot.HEAD, new Item.Settings().group(ItemGroup.COMBAT));
 	public static final Item ASTOLFO_CHESTPLATE = new ArmorItem(ExampleMod.ASTOLFO_MATERIAL, EquipmentSlot.CHEST, new Item.Settings().group(ItemGroup.COMBAT));
 	public static final Item ASTOLFO_LEGGINGS = new ArmorItem(ExampleMod.ASTOLFO_MATERIAL, EquipmentSlot.LEGS, new Item.Settings().group(ItemGroup.COMBAT));
@@ -70,8 +71,8 @@ public class ExampleMod implements ModInitializer {
 		Registry.register(Registry.ITEM, new Identifier("modid", "astolfo_boots"), ASTOLFO_BOOTS);
 
 		Registry.register(Registry.ITEM, new Identifier("modid", "astolfo"), ASTOLFO);
-
-
+		Registry.register(Registry.ITEM, new Identifier("modid", "astolfo_face"), ASTOLFO_FACE);
+		Registry.register(Registry.ITEM, new Identifier("modid", "golden_astolfo_face"), GOLDEN_ASTOLFO_FACE);
 		Registry.register(BuiltinRegistries.CONFIGURED_FEATURE,
 				new Identifier("modid", "overworld_astolfo_ore"), OVERWORLD_ASTOLFO_ORE_CONFIGURED_FEATURE);
 		Registry.register(BuiltinRegistries.PLACED_FEATURE, new Identifier("modid", "overworld_astolfo_ore"),
