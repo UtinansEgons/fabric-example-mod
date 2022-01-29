@@ -1,0 +1,14 @@
+{
+  "parent":"fabricshieldlib:item/fabric_shield",
+  "textures":{
+    "shield":"modid:item/astolfo_shield"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "blocking": 1
+      },
+      "model": "modid:item/astolfo_shield_blocking"
+    }
+  ]
+}
