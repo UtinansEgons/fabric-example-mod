@@ -3,6 +3,9 @@ package net.fabricmc.example;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.example.armor.ModArmorMaterials;
 import net.fabricmc.example.tools.AstolfoToolMaterial;
+import net.fabricmc.example.tools.CustomAxeItem;
+import net.fabricmc.example.tools.CustomHoeItem;
+import net.fabricmc.example.tools.CustomPickaxeItem;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -22,7 +25,7 @@ import net.minecraft.world.gen.decorator.HeightRangePlacementModifier;
 import net.minecraft.world.gen.decorator.SquarePlacementModifier;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.GenerationStep;
-
+import org.lwjgl.system.CallbackI;
 
 
 public class ExampleMod implements ModInitializer {
@@ -44,7 +47,10 @@ public class ExampleMod implements ModInitializer {
 	public static final Item ASTOLFO_BOOTS = new ArmorItem(ExampleMod.ASTOLFO_MATERIAL, EquipmentSlot.FEET, new Item.Settings().group(ItemGroup.COMBAT));
 
 	public static final ToolItem ASTOLFO_SWORD = new SwordItem(AstolfoToolMaterial.INSTANCE, 10000000, 100000000, new Item.Settings().group(ItemGroup.TOOLS));
-
+	public static final ToolItem ASTOLFO_SHOVEL = new ShovelItem(AstolfoToolMaterial.INSTANCE, 100, 100000000, new Item.Settings().group(ItemGroup.TOOLS));
+	public static final ToolItem ASTOLFO_PICKAXE = new CustomPickaxeItem(AstolfoToolMaterial.INSTANCE, 100, 100000000, new Item.Settings().group(ItemGroup.TOOLS));
+	public static final ToolItem ASTOLFO_AXE = new CustomAxeItem(AstolfoToolMaterial.INSTANCE, 100, 100000000, new Item.Settings().group(ItemGroup.TOOLS));
+	public static final ToolItem ASTOLFO_HOE = new CustomHoeItem(AstolfoToolMaterial.INSTANCE, 100, 1000000000, new Item.Settings().group(ItemGroup.TOOLS));
 
 
 	private static ConfiguredFeature<?, ?> OVERWORLD_ASTOLFO_ORE_CONFIGURED_FEATURE = Feature.ORE
@@ -81,6 +87,10 @@ public class ExampleMod implements ModInitializer {
 		Registry.register(Registry.ITEM, new Identifier("modid", "golden_astolfo_face"), GOLDEN_ASTOLFO_FACE);
 
 		Registry.register(Registry.ITEM, new Identifier("modid", "astolfo_sword"), ASTOLFO_SWORD);
+		Registry.register(Registry.ITEM, new Identifier("modid", "astolfo_shovel"), ASTOLFO_SHOVEL);
+		Registry.register(Registry.ITEM, new Identifier("modid", "astolfo_pickaxe"), ASTOLFO_PICKAXE);
+		Registry.register(Registry.ITEM, new Identifier("modid", "astolfo_axe"), ASTOLFO_AXE);
+		Registry.register(Registry.ITEM, new Identifier("modid", "astolfo_hoe"), ASTOLFO_HOE);
 
 		Registry.register(BuiltinRegistries.CONFIGURED_FEATURE,
 				new Identifier("modid", "overworld_astolfo_ore"), OVERWORLD_ASTOLFO_ORE_CONFIGURED_FEATURE);
